@@ -11,6 +11,7 @@ namespace AdditionalControllers.Controllers
     {
         public string Index()
         {
+            var c = 0;
             return "Additional Controller";
         }
     }
