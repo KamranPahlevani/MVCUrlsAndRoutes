@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+</p>
+<p>
+    @Html.ActionLink("ActinLink with just actionName", "About")
+</p>
+<p>
+    @Html.ActionLink("ActinLink with actionName and routeValues", "About", 
+                     new {id="MyID"})
+</p>
+<p>
+    @Html.ActionLink("ActinLink with actionName and htmlAttribute", "About",
+                     null,
+                     new {id="MyAnchorID", @class="myCSSClass"})
+</p>
+<p>
+    @Html.ActionLink("ActinLink with All Features", "About", "Home",
+                     "https",
+                     "myserver.mydomain.com",
+                     "myFragmentName",
+                     new { id="MyId"},
+                     new { id = "MyAnchorID", @class = "myCSSClass" })
+</p>
+<p>
+    Url : @Url.Action("About",
+                      "Home",
+                      new {id="MyID" })
+</p>
+<p>
+    @Html.RouteLink("RoutedLink",
+                    new {controller="Home", action="About", id="MyId"})
+</p>
+<p>
+    Url : @Url.RouteUrl(new {controller="Home", action="About", id="MyId"})
+</p>
+<p>
+    @Html.RouteLink("RouteLink with route Name",
+                    "MyRoute",
+                    new {action="About"})
+</p>
+<p>
+    @Html.ActionLink("ActionLink for Create Custom Route in Output Address",
+                     "GetLegacyURL",
+                     new { legacyURL = "~/articles/Windows_3.1_Overview.html"})
+</p>
+
+
+
